@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>:: Final Receipt ::</title>
+		<!-- CSS only -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.fa{
+				color: #E90606;
+			    margin-top: 0 3px;
+			    font-size: 15px;
+			    animation: pound .35s infinite alternate;
+			    -webkit-animation: pound .35s infinite alternate;
+			 }
+		</style>
+	</head>
+	<body onload="load_receipt()">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  		<a style="margin-left: 20px;" class="navbar-brand" th:href="@{/}">Donate4Trees</a>
+		</nav>
+		<div class="container pt-4">
+			<h1>Let's do some small donation..</h1>
+			<h6>Donation for our health, nature & future.</h6>
+			<hr/>
+			<div class="container pt-4">
+				<div class="card">
+					<center>
+						<h3>Payment Receipt</h3>
+						<hr/>
+						<div class="form-row mt-4">
+						    <div class="form-group col-md-6">
+								<h5>Name: <span th:text="${fullname}"></span></h5>
+						    </div>
+						    <div class="form-group col-md-6">
+								<h5>Status: <span style="color: green;" th:text="${status}"></span></h5>
+						    </div>
+						</div>
+					</center>
+					<hr/>
+					<div class="form-row mt-4">
+						<div class="form-group col-md-2">
+							<p style="padding-left: 20px; font-weight:bold">Address: </p>
+						</div>
+						<div class="form-group col-md-10">
+							<p style="padding-left: 20px; padding-right: 10px;" th:text="${address}"></p>
+						</div>
+					</div>
+
+					<table class="table table-hover">
+					  	<tbody>
+					    	<tr>
+					      		<td>Mobile No.</td>
+					      		<td th:text="${mobile}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Email Id</td>
+					      		<td th:text="${email}"></td>
+					    	</tr>
+					    	
+					    	<tr>
+					      		<td>Donation Topic</td>
+					      		<td th:text="${topic}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Amount (Rs.)</td>
+					      		<td th:text="${amount}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Paid Amount</td>
+					      		<td th:text="${paid_amount}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Due Amount</td>
+					      		<td th:text="${due_amount}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Currency Type</td>
+					      		<td th:text="${currency_type}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Payment Date</td>
+					      		<td th:text="${payment_date}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Order Id</td>
+					      		<td th:text="${order_id}"></td>
+					    	</tr>
+					    	<tr>
+					      		<td>Payment Id</td>
+					      		<td th:text="${payment_id}"></td>
+					    	</tr>
+					  	</tbody>
+					</table>
+				</div>
+				<center style="margin-top: 20px; margin-bottom: 20px;">
+					<button onClick="printReceipt()" class="btn btn-success btn-block" style="width: 30%">SAVE / PRINT</button>
+				</center>
+				<center style="margin-top: 20px; margin-bottom: 30px;">
+					<a th:href="@{/}">Goto Home Page</a>
+				</center>
+				<center>
+					<p style="margin-top: 60px;">Developed with <i class="fa fa-heart pulse"></i> By: <a href="https://rajkumarsony.github.io" target="_blank">Raj Kumar Sony.</a></p>
+				</center>
+			</div>
+		</div>
+		
+		<!-- JavaScript Bundle with Popper -->
+		<script th:src="@{/js/script.js}"></script>
+	</body>
+</html>

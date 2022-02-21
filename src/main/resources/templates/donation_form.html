@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>:: Donation Form ::</title>
+		<!-- CSS only -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.fa{
+				color: #E90606;
+			    margin-top: 0 3px;
+			    font-size: 15px;
+			    animation: pound .35s infinite alternate;
+			    -webkit-animation: pound .35s infinite alternate;
+			 }
+		</style>
+	</head>
+	<body onload="initMap()">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  		<a style="margin-left: 20px;" class="navbar-brand" th:href="@{/}">Donate4Trees</a>
+		</nav>
+		<div class="container pt-4">
+			<h1>Let's do some small donation..</h1>
+			<h6>Donation for our health, nature & future.</h6>
+			<hr/>
+			<div class="form-row mt-4">
+			    <div class="form-group col-md-6">
+			    	<label>First Name</label>
+			    	<input type="text" pattern="[A-Za-z]{10}" class="form-control" id="fname" placeholder="Enter First Name">
+			    </div>
+			    <div class="form-group col-md-6">
+			    	<label>Last Name</label>
+			    	<input type="text" pattern="[A-Za-z]{10}" class="form-control" id="lname" placeholder="Enter Last Name">
+			    </div>
+			</div>
+			<div class="form-row">
+			    <div class="form-group col-md-6">
+			    	<label>Mobile Number</label>
+			    	<input type="number" class="form-control" id="mobile" placeholder="Enter Mobile Number">
+			    </div>
+			    <div class="form-group col-md-6">
+			    	<label>Email Id</label>
+			    	<input type="email" class="form-control" id="email" placeholder="Enter Email Id">
+			    </div>
+			</div>
+			<div class="form-group">
+	    		<label>Address</label>
+	    		<input type="text" class="form-control" id="address" placeholder="Enter Your Address...">
+	  		</div>
+	  		<div class="form-row">
+	  			<div class="form-group col-md-6">
+		  			<label>Donate For</label>
+		  			<div class="input-group mb-3">
+						<div class="input-group-prepend">
+					    	<label class="input-group-text" for="inputGroupSelect01">Options</label>
+					  	</div>
+					  	<select class="custom-select" id="donate_for">
+					  		<option value="" selected>Choose...</option>
+					    	<option value="Banyan Tree">Banyan Tree</option>
+					    	<option value="Oak Tree">Oak Tree</option>
+					    	<option value="Neem Tree">Neem Tree</option>
+					    	<option value="Maple Tree">Maple Tree</option>
+					    	<option value="Coconut Tree">Coconut Tree</option>
+					    	<option value="Teak Tree">Teak Tree</option>
+					    	<option value="Cedar Tree">Cedar Tree</option>
+					    	<option value="Birch Tree">Birch Tree</option>
+					    	<option value="Pipal Tree">Pipal Tree</option>
+					    	<option value="Pine Tree">Pine Tree</option>
+					    	<option value="Eucalyptus Tree">Eucalyptus Tree</option>
+					    	<option value="Ash Tree">Ash Tree</option>
+					    	<option value="Aspen Tree">Aspen Tree</option>
+					    	<option value="Willow Tree">Willow Tree</option>
+					    	<option value="Walnut Tree">Walnut Tree</option>
+					    	<option value="Cherry Tree">Cherry Tree</option>
+					    	<option value="Mango Tree">Mango Tree</option>
+					    	<option value="Fir Tree">Fir Tree</option>
+					    	<option value="Hickory Tree">Hickory Tree</option>
+					    	<option value="Hawthorn Tree">Hawthorn Tree</option>
+					    	<option value="Bamboo Tree">Bamboo Tree</option>
+					    	<option value="Alder Tree">Alder Tree</option>
+					    	<option value="Juniper Tree">Juniper Tree</option>
+					    	<option value="Almond Tree">Almond Tree</option>
+					    	<option value="Other Trees">Other Trees</option>
+					  	</select>
+					</div>
+	  			</div>
+		  		<div class="form-group col-md-6">
+			    	<label>Donate Amount</label>
+			    	<div class="input-group mb-3">
+					  	<div class="input-group-prepend">
+					    	<span class="input-group-text">₹</span>
+					  	</div>
+					  	<input id="donate_amount" type="number" class="form-control" placeholder="Enter Amount In Rupees">
+					  	<div class="input-group-append">
+					    	<span class="input-group-text">.00</span>
+					  	</div>
+					</div>
+		  		</div>
+			</div>
+			<center>
+				<button class="btn btn-success btn-block mt-5" style="width: 70%;" onClick="paymentStart()">Checkout</button>
+			</center>	
+			<center>
+				<p style="margin-top: 60px;">Developed with <i class="fa fa-heart pulse"></i> By: <a href="https://rajkumarsony.github.io" target="_blank">Raj Kumar Sony.</a></p>
+			</center>
+		</div>
+	
+		<!-- JavaScript Bundle with Popper -->
+		<script th:src="@{/js/script.js}"></script>
+		<script th:src="@{/js/geolocation.js}"></script>
+		
+		<script
+	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&channel=2"
+	      async></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	</body>
+</html>

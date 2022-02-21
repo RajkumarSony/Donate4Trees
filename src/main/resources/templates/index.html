@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>:: Home | Donate4Trees ::</title>
+		<!-- CSS only -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.fa{
+				color: #E90606;
+			    margin-top: 0 3px;
+			    font-size: 15px;
+			    animation: pound .35s infinite alternate;
+			    -webkit-animation: pound .35s infinite alternate;
+			 }
+		</style>
+	</head>
+	<body th:style="'background:url(img/pic1.jpg)'">
+		<div class="container pt-4">
+			<center>
+				<h1 style="margin-top: 140px; font-size: 60px; color: #fff; font-family:'Trebuchet MS'">Welcome To Donate4Trees Portal!</h1>
+				<h3 style="margin-top: 40px; font-size: 30px; color: #fff">Donation for our health, nature & future.</h3> 
+			
+				<button style="margin-top: 140px; width: 30%" onClick="openForm()" class="btn btn-success btn-block">DONATE</button>
+			</center>
+		</div>
+		<center>
+			<p style="margin-top: 60px;">Developed with <i class="fa fa-heart pulse"></i> By: <a href="https://rajkumarsony.github.io" target="_blank">Raj Kumar Sony.</a></p>
+		</center>
+		
+		<!-- JavaScript Bundle with Popper -->
+		<script th:src="@{/js/script.js}"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	</body>
+</html>
